@@ -1,10 +1,9 @@
 import './App.css';
-
+import Body from './components/Body';
 function App() {
   return (
-    <div className="App text-3xl">
-      Netflix GPT in progress
-    </div>
+    <div className='w-[100%]'><Body/></div>
+   
   );
 }
 
