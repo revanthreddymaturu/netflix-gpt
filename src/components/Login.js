@@ -28,7 +28,6 @@ const Login=()=>{
             if(signUpFlag){
                 createUserWithEmailAndPassword(auth,email.current.value,password.current.value)
                 .then((userCredential)=>{
-                    const user = userCredential.user;
                     updateProfile(auth.currentUser, {
                         displayName:name.current.value
                       }).then(() => {

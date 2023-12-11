@@ -18,7 +18,7 @@ const Body=()=>{
                 dispatch(removeUser());
             }
           });
-    },[])
+    },)
     const appRouter=createBrowserRouter([
     {
         path:"/",
