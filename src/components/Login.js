@@ -2,10 +2,11 @@ import Header from "./Header"
 import { netflixLogoBackground } from "../utils/constants"
 import { useRef, useState } from "react";
 import { validateSignIn,validateSignUp } from "../utils/validate";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword,updateProfile } from "firebase/auth";
 import {auth} from "../utils/firebase"
+import { useNavigate } from "react-router-dom";
 const Login=()=>{
-    
+    const navigate=useNavigate();
     const [isSignInUp,setSignInUp]=useState("Sign In");
     const [newSignUp,setNewSignUp]=useState("New to Netflix? Sign up now.");
     const [signUpFlag,setSignUpFlag]=useState(false);
@@ -28,7 +29,16 @@ const Login=()=>{
                 createUserWithEmailAndPassword(auth,email.current.value,password.current.value)
                 .then((userCredential)=>{
                     const user = userCredential.user;
+                    updateProfile(auth.currentUser, {
+                        displayName:name.current.value
+                      }).then(() => {
+                        navigate("/browse");
 
+                      }).catch((error) => {
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        setValidMsg(errorCode+" "+errorMessage);
+                      });
                 })
                 .catch((error) => {
                     const errorCode = error.code;
@@ -41,6 +51,7 @@ const Login=()=>{
                 .then((userCredential) => {
                   // Signed in 
                   const user = userCredential.user;
+                  navigate("/browse");
                   console.log(user);
                   // ...
                 })
