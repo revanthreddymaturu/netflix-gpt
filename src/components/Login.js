@@ -4,14 +4,16 @@ import { useRef, useState } from "react";
 import { validateSignIn,validateSignUp } from "../utils/validate";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword,updateProfile } from "firebase/auth";
 import {auth} from "../utils/firebase"
-import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 const Login=()=>{
-    const navigate=useNavigate();
     const [isSignInUp,setSignInUp]=useState("Sign In");
     const [newSignUp,setNewSignUp]=useState("New to Netflix? Sign up now.");
     const [signUpFlag,setSignUpFlag]=useState(false);
     const email=useRef(null);
     const password=useRef(null);
+    const dispatch=useDispatch();
+
     const name=useRef(null);
     const [isValidMsg,setValidMsg]=useState(null);
     let msg=null;
@@ -28,11 +30,11 @@ const Login=()=>{
             if(signUpFlag){
                 createUserWithEmailAndPassword(auth,email.current.value,password.current.value)
                 .then((userCredential)=>{
-                    updateProfile(auth.currentUser, {
+                    updateProfile(userCredential.user, {
                         displayName:name.current.value
                       }).then(() => {
-                        navigate("/browse");
-
+                        const {uid,email,displayName} = auth.currentUser;
+                        dispatch(addUser({uid:uid,email:email,displayName:displayName}));
                       }).catch((error) => {
                         const errorCode = error.code;
                         const errorMessage = error.message;
@@ -50,7 +52,6 @@ const Login=()=>{
                 .then((userCredential) => {
                   // Signed in 
                   const user = userCredential.user;
-                  navigate("/browse");
                   console.log(user);
                   // ...
                 })
