@@ -8,3 +8,4 @@ export const TMDB_API_Options = {
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5NmJkOTMyYjdlYTJlZDMwNjg0N2JlNGJkNTQyMjA3ZCIsInN1YiI6IjY1ODQ2MDdmODgwNTUxNDE0YjI3ZGYyNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.MoaktcXV7y5eOJpAj1FlcbEL4k3Jkp8jyPNUe1t7aiQ'
     }
   };
+  export const youtubeVideoLink="https://www.youtube-nocookie.com/embed/";
