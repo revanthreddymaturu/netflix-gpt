@@ -9,3 +9,4 @@ export const TMDB_API_Options = {
     }
   };
   export const youtubeVideoLink="https://www.youtube-nocookie.com/embed/";
+  export const movieImgURL="https://image.tmdb.org/t/p/w500";
