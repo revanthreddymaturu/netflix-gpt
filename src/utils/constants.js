@@ -5,9 +5,9 @@ export const TMDB_API_Options = {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5NmJkOTMyYjdlYTJlZDMwNjg0N2JlNGJkNTQyMjA3ZCIsInN1YiI6IjY1ODQ2MDdmODgwNTUxNDE0YjI3ZGYyNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.MoaktcXV7y5eOJpAj1FlcbEL4k3Jkp8jyPNUe1t7aiQ'
+      Authorization: 'Bearer '+process.env.REACT_APP_TMDB_KEY
     }
   };
   export const youtubeVideoLink="https://www.youtube-nocookie.com/embed/";
   export const movieImgURL="https://image.tmdb.org/t/p/w500";
-  export const OPEN_AI_KEY="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"
+  export const OPEN_AI_KEY=process.env.REACT_APP_OPEN_AI_KEY
