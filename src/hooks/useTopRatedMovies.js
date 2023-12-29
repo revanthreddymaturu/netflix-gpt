@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { TMDB_API_Options } from "../utils/constants"
 import { useDispatch } from "react-redux"
 import { addTopRatedMovies } from "../utils/movieSlice"

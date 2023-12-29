@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useDispatch } from "react-redux"
 import { addTrailerVideo } from "../utils/movieSlice";
 import { TMDB_API_Options } from "../utils/constants";
