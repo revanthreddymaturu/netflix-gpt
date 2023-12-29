@@ -30,9 +30,9 @@ const GPTSearchComponent=()=>{
       dispatch(addMoviesGPT({listOfMovies:tmdbData, listOfMovieNames:movieNames}));
     }   
     return(
-        <div className="pt-[15%] flex justify-center">
-            <form className="bg-black w-[50%] grid grid-cols-12" onSubmit={(e)=>e.preventDefault()}>
-            <input ref={enteredText} className="m-3 p-3 col-span-8 " type="text" placeholder="Enter the type of movies you would like to watch!"/>
+        <div className="pt-[35%] md:pt-[15%] flex justify-center">
+            <form className="bg-black w-[95%] md:w-[50%] grid grid-cols-12" onSubmit={(e)=>e.preventDefault()}>
+            <input ref={enteredText} className="placeholder:text-xs md:placeholder:text-lg m-3 p-3 col-span-8 " type="text" placeholder="Enter the type of movies you would like to watch!"/>
             <button className="rounded-md m-3 p-3 col-span-4 text-white bg-red-700" onClick={searchHandler}>Search</button>
             </form>
         </div>

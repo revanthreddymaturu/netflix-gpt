@@ -82,7 +82,7 @@ const Login=()=>{
         <div>
             <div>
                 <Header/>
-                <img className="absolute h-screen w-screen"  src={netflixLogoBackground} alt="background-img"/>
+                <img className="absolute object-cover h-screen w-screen"  src={netflixLogoBackground} alt="background-img"/>
             </div>
             <div>
                 <form className="text-white rounded-md absolute p-[3rem] flex flex-col w-[26rem] bg-black my-36 mx-auto right-0 left-0 bg-opacity-80">

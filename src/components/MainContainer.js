@@ -6,7 +6,7 @@ const MainContainer=()=>{
     if(!nowPlaying) return;
     const mainMovie=nowPlaying[0];
     return(
-        <div className="h-screen">
+        <div className="h-[25rem] bg-black md:h-screen md:bg-none">
             <VideoTitle title={mainMovie.original_title} overview={mainMovie.overview}/>
             <VideoBackground movieId={mainMovie.id}/>
            

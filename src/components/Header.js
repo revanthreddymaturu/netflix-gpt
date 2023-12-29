@@ -53,7 +53,7 @@ const Header=()=>{
             <img onClick={mouseEnterHandler}  className=" w-[3.5rem] cursor-pointer rounded-xl h-[3.5rem] p-2 self-center mr-6" src={userlogo} alt="userlogo"/>
             </div>
             )}
-            {(showDDFlag && user) && <div className="absolute right-12 top-19 rounded-md  p-2 w-[11rem] text-white bg-black opacity-60 h-[3rem]">
+            {(showDDFlag && user) && <div className="absolute right-12 top-19 rounded-md  p-2 w-[11rem] text-white bg-black opacity-100 md:opacity-60 h-[3rem]">
             <div className="cursor-pointer " onClick={signoutHandler}>{user?.displayName+ " (Sign out)"}</div>
         </div>}
             </div>

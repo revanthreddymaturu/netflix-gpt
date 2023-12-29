@@ -6,7 +6,7 @@ const GPTSearch=()=>{
     return(
         <div>
             <div className="fixed -z-10">
-                <img className=" h-screen w-screen "  src={netflixLogoBackground} alt="background-img"/>
+                <img className="object-cover h-screen w-screen "  src={netflixLogoBackground} alt="background-img"/>
             </div>
             <GPTSearchComponent/>
             <GPTSearchResult/>
