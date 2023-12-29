@@ -8,7 +8,7 @@ const MovieList=({movieList,genre})=>{
                     <div className="flex  gap-3 p-4 px-14">
                         {movieList && movieList.map((movie)=>{
                             return (
-                            <MovieCard movie={movie}/>
+                            <MovieCard key={movie.id} movie={movie}/>
                             )
                         })}
                     </div>

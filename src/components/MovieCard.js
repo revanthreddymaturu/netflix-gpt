@@ -1,10 +1,11 @@
 import { movieImgURL } from "../utils/constants"
 
 const MovieCard=({movie})=>{
+    if(movie.backdrop_path===null) return;
     const imgURL=movieImgURL+movie.backdrop_path;
     return(
         <div className="w-[14rem] rounded-md">
-            <img src={imgURL} alt="Poster"/>
+            <img src={imgURL} title={movie.title} alt="Poster"/>
         </div>
     )
 }
